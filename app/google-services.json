@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "487451405735",
+    "project_id": "sendvis-d512f",
+    "storage_bucket": "sendvis-d512f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487451405735:android:9d807e0c45086ad55e1a82",
+        "android_client_info": {
+          "package_name": "com.example.sendvis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487451405735-i6qp1di3nuurlo4p0r02r9cahe613056.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnQ2KUaZ75KYayL9Y3KoM8In_L-h5aDts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487451405735-i6qp1di3nuurlo4p0r02r9cahe613056.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487451405735:android:6c81eebdb689e6ac5e1a82",
+        "android_client_info": {
+          "package_name": "com.example.sendvis2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487451405735-i6qp1di3nuurlo4p0r02r9cahe613056.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnQ2KUaZ75KYayL9Y3KoM8In_L-h5aDts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487451405735-i6qp1di3nuurlo4p0r02r9cahe613056.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
