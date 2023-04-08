@@ -22,7 +22,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
         // todo: insert cod aici
 
-        mDatabase = FirebaseDatabase.getInstance("https://sendvis-d512f-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("test");
+        mDatabase = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference().child("test");
 
         return view;
     }
