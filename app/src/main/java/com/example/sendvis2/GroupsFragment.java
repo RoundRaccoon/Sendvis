@@ -2,6 +2,7 @@ package com.example.sendvis2;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -78,6 +79,7 @@ public class GroupsFragment extends Fragment {
                 builder.append(balance);
                 String sumToOwe = builder.toString();
                 if (sumToOwe.charAt(0) == '-') {
+                    overallOweText.setText("Overall, you owe ");
                     overallOweValueText.setText("RON" + sumToOwe.substring(1));
                     overallOweValueText.setTextColor(getResources().getColor(R.color.red));
                 } else {
@@ -167,6 +169,14 @@ class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHolder> {
             name = itemView.findViewById(R.id.group_name);
             numberOfMembers = itemView.findViewById(R.id.num_members);
             owedSum = itemView.findViewById(R.id.sum_to_owe);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(view.getContext(), TransactionsActivity.class);
+                    view.getContext().startActivity(intent);
+                }
+            });
         }
     }
 
