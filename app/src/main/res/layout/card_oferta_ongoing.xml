@@ -17,7 +17,7 @@
             android:id="@+id/tv_vendor_ongoing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vendor name"
+            android:text="Shaormeria WOW"
             android:textColor="@android:color/darker_gray"
             android:textSize="18sp" />
 
@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_weight="9"
+                android:layout_weight="7"
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="8dp">
 

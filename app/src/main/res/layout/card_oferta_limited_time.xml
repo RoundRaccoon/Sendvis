@@ -17,7 +17,7 @@
             android:id="@+id/tv_vendor_limited_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vendor name"
+            android:text="Livrari Regie"
             android:textColor="@android:color/darker_gray"
             android:textSize="18sp" />
 

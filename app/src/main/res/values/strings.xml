@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Sendvis2</string>
+    <string name="app_name">Revolut</string>
     <string name="database_url">https://sendvis-d512f-default-rtdb.europe-west1.firebasedatabase.app</string>
 </resources>
