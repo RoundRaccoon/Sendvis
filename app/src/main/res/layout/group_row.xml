@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/group_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Group Name"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/num_members"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Number of Members: 0"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/sum_to_owe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You owe: "
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
