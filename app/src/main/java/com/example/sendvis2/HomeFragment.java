@@ -1,6 +1,5 @@
 package com.example.sendvis2;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,10 +47,11 @@ public class HomeFragment extends Fragment {
         Button toPromos = view.findViewById(R.id.btn_see_all_offers);
         Button toLeaderboard = view.findViewById(R.id.btn_see_all_leaderboard);
 
+
         toPromos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(HomeFragment.this, PromosActivity.class);
+//                Intent intent = new Intent(getActivity(), BiometricCheckActivity.class);
 //                startActivity(intent);
             }
         });
