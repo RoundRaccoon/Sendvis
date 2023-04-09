@@ -16,6 +16,8 @@ import java.time.LocalTime;
 
 public class HomeFragment extends Fragment {
 
+    private DatabaseReference mDatabase;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -46,6 +48,23 @@ public class HomeFragment extends Fragment {
 
         Button toPromos = view.findViewById(R.id.btn_see_all_offers);
         Button toLeaderboard = view.findViewById(R.id.btn_see_all_leaderboard);
+        Button payVendor = view.findViewById(R.id.btn_pay_vendor);
+
+        mDatabase = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference();
+        DatabaseReference paymentsReference = mDatabase.child("Balance");
+        TextView balance = view.findViewById(R.id.tv_wallet_balance);
+
+        paymentsReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                balance.setText(snapshot.getValue(Integer.class).toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         toPromos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +78,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), LeaderboardActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        payVendor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ScanQRActivity.class);
                 startActivity(intent);
             }
         });

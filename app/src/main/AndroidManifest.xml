@@ -18,6 +18,9 @@
             android:name=".PromosActivity"
             android:exported="false" />
         <activity
+            android:name=".ScanQRActivity"
+            android:exported="false" />
+        <activity
             android:name=".TransactionsActivity"
             android:exported="false" />
         <activity
