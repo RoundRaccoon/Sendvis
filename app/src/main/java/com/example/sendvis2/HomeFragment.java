@@ -58,13 +58,27 @@ public class HomeFragment extends Fragment {
         Button payVendor = view.findViewById(R.id.btn_pay_vendor);
 
         mDatabase = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference();
-        DatabaseReference paymentsReference = mDatabase.child("Balance");
+        DatabaseReference balanceReference = mDatabase.child("Balance");
+        DatabaseReference lpReference = mDatabase.child("LP");
         TextView balance = view.findViewById(R.id.tv_wallet_balance);
+        TextView lp = (TextView) c4.findViewById(R.id.tv_points_leaderboard);
 
-        paymentsReference.addValueEventListener(new ValueEventListener() {
+        balanceReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 balance.setText(snapshot.getValue(Integer.class).toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        lpReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                lp.setText(snapshot.getValue(Integer.class).toString());
             }
 
             @Override
