@@ -28,8 +28,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.Executor;
 
 public class ScanQRActivity extends AppCompatActivity {
@@ -59,18 +57,25 @@ public class ScanQRActivity extends AppCompatActivity {
     private void addPaymentToDatabase() {
         mDatabase = FirebaseDatabase.getInstance(getResources().getString(R.string.database_url)).getReference();
         DatabaseReference paymentsReference = mDatabase.child("Payments");
-
+        DatabaseReference balanceReference = mDatabase.child("Balance");
+        DatabaseReference lpReference = mDatabase.child("LP");
 
         isSent = true;
-        paymentsReference.addValueEventListener(new ValueEventListener() {
+        mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (isSent) {
                     isSent = false;
 
-                    long count = snapshot.getChildrenCount() + 1;
-                    Map<String, LedgerCard> payments = new HashMap<>();
-                    paymentsReference.child(String.valueOf(count)).setValue(new LedgerCard("Pub 18", true, true, 21, "09-Apr-23"));
+                    long count = snapshot.child("Payments").getChildrenCount() + 1;
+                    Integer balance = snapshot.child("Balance").getValue(Integer.class);
+                    Integer lp = snapshot.child("LP").getValue(Integer.class);
+
+                    int price = 21;
+                    int lpGained = 10;
+                    paymentsReference.child(String.valueOf(count)).setValue(new LedgerCard("Pub 18", true, true, price, "09-Apr-23"));
+                    balanceReference.setValue(balance-price);
+                    lpReference.setValue(lp + lpGained);
                 }
             }
 
