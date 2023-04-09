@@ -44,18 +44,10 @@ app:cardUseCompatPadding="true">
             android:textSize="14sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RON "
-            android:textColor="@android:color/black"
-            android:textSize="14sp"
-            android:textStyle="bold"/>
-
-        <TextView
             android:id="@+id/card_ledger_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="247"
+            android:text="RON247"
             android:textColor="@android:color/black"
             android:textSize="14sp"
             android:textStyle="bold"/>
