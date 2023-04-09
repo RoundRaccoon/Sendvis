@@ -51,16 +51,16 @@ public class HomeFragment extends Fragment {
         toPromos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(HomeFragment.this, PromosActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getContext(), PromosActivity.class);
+                startActivity(intent);
             }
         });
 
         toLeaderboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(HomeFragment.this, LeaderboardActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(getContext(), LeaderboardActivity.class);
+                startActivity(intent);
             }
         });
 
