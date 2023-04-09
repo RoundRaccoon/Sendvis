@@ -195,6 +195,36 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="You have "
+            android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_home_lp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="00"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text=" Loyalty Points (LP)"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
         <include
             android:id="@+id/card_home_1"
             layout="@layout/card_leaderboard" />

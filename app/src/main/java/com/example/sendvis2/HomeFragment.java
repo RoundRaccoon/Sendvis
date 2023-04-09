@@ -39,8 +39,8 @@ public class HomeFragment extends Fragment {
         CardView c4 = view.findViewById(R.id.card_home_4);
 
         ((TextView)c1.findViewById(R.id.tv_name_leaderboard)).setText("Marcel Popescu");
-        ((TextView)c2.findViewById(R.id.tv_name_leaderboard)).setText("Ion Daniel");
-        ((TextView)c3.findViewById(R.id.tv_name_leaderboard)).setText("Lucian Liviu");
+        ((TextView)c2.findViewById(R.id.tv_name_leaderboard)).setText("Sendvisescu Sendvisel");
+        ((TextView)c3.findViewById(R.id.tv_name_leaderboard)).setText("Balon Jr");
         ((TextView)c4.findViewById(R.id.tv_name_leaderboard)).setText("Dragos Badea");
 
         ((TextView)c1.findViewById(R.id.tv_place_leaderboard)).setText("1 ");
@@ -49,9 +49,9 @@ public class HomeFragment extends Fragment {
         ((TextView)c4.findViewById(R.id.tv_place_leaderboard)).setText("6 ");
 
         ((TextView)c1.findViewById(R.id.tv_points_leaderboard)).setText("1000");
-        ((TextView)c2.findViewById(R.id.tv_points_leaderboard)).setText("200");
-        ((TextView)c3.findViewById(R.id.tv_points_leaderboard)).setText("30");
-        ((TextView)c4.findViewById(R.id.tv_points_leaderboard)).setText("4");
+        ((TextView)c2.findViewById(R.id.tv_points_leaderboard)).setText("900");
+        ((TextView)c3.findViewById(R.id.tv_points_leaderboard)).setText("850");
+        ((TextView)c4.findViewById(R.id.tv_points_leaderboard)).setText("75");
 
         Button toPromos = view.findViewById(R.id.btn_see_all_offers);
         Button toLeaderboard = view.findViewById(R.id.btn_see_all_leaderboard);
@@ -61,6 +61,7 @@ public class HomeFragment extends Fragment {
         DatabaseReference balanceReference = mDatabase.child("Balance");
         DatabaseReference lpReference = mDatabase.child("LP");
         TextView balance = view.findViewById(R.id.tv_wallet_balance);
+        TextView lp2 = view.findViewById(R.id.tv_home_lp);
         TextView lp = (TextView) c4.findViewById(R.id.tv_points_leaderboard);
 
         balanceReference.addValueEventListener(new ValueEventListener() {
@@ -71,7 +72,6 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
 
@@ -79,6 +79,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 lp.setText(snapshot.getValue(Integer.class).toString());
+                lp2.setText(snapshot.getValue(Integer.class).toString());
             }
 
             @Override

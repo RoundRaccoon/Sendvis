@@ -1,10 +1,5 @@
 package com.example.sendvis2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -91,7 +91,9 @@ class PromoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemViewType(int position) {
-        return position % 2;
+//        return position % 2;
+        if(position == 0) return 0;
+        else return 1;
     }
 
     @Override
@@ -117,7 +119,7 @@ class PromoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             Promo promo = promos.get(position);
             viewHolder.vendor.setText(promo.getVendor());
             viewHolder.title.setText(promo.getTitle());
-            viewHolder.number.setText(promo.getCurrent());
+            viewHolder.number.setText(String.valueOf(Integer.parseInt(promo.getComplete()) - Integer.parseInt(promo.getCurrent())));
             viewHolder.quantifier.setText(" " + promo.getQuantifier());
             viewHolder.current.setText(promo.getCurrent());
             viewHolder.complete.setText(promo.getComplete());

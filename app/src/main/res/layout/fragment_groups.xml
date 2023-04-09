@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/relativelayoutoverall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginVertical="10dp"
         android:layout_marginLeft="5dp"
-        android:id="@+id/relativelayoutoverall">
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#222222"
-        android:textSize="26dp"
-        android:id="@+id/overall_owe_text"/>
+            <TextView
+                android:id="@+id/overall_owe_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Overall, you are owed "
+                android:textColor="#222222"
+                android:textSize="26dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/red"
-        android:textSize="26dp"
-        android:layout_toRightOf="@id/overall_owe_text"
-        android:id="@+id/overall_owe_value"/>
+            <TextView
+                android:id="@+id/overall_owe_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_toRightOf="@id/overall_owe_text"
+                android:text="0"
+                android:textColor="@color/red"
+                android:textSize="26dp" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/groupsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/groupsList"
         android:layout_below="@id/relativelayoutoverall">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -42,12 +47,12 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/add_button"
-        app:backgroundTint="@color/orange"
-        app:elevation="8dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="26dp"
+        android:src="@drawable/add_button"
+        app:backgroundTint="@color/orange"
+        app:elevation="8dp"
         app:pressedTranslationZ="12dp"
         app:tint="@android:color/white" />
 

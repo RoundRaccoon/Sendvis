@@ -37,7 +37,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="You "
+                    android:text="Dani "
                     android:textColor="@android:color/darker_gray"
                     android:textSize="14sp" />
 
@@ -61,7 +61,7 @@
                     android:id="@+id/card_ledger_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100"
+                    android:text="216.75"
                     android:textColor="@android:color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -105,7 +105,7 @@
                     android:id="@+id/card_group_transaction_lent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="lent "
+                    android:text="owe "
                     android:textColor="@android:color/darker_gray"
                     android:textSize="14sp" />
 
@@ -129,7 +129,7 @@
                     android:id="@+id/card_group_transaction_part"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="66"
+                    android:text="72.25"
                     android:textColor="@android:color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />

@@ -19,9 +19,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
-import java.sql.Array;
 import java.util.ArrayList;
 
 public class LedgerFragment extends Fragment {
@@ -110,7 +107,9 @@ class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentViewHold
             StringBuilder builder = new StringBuilder();
             builder.append(payment.getAmount());
             String s = builder.toString();
-            holder.amount.setText("RON" + s.substring(1));
+//            holder.amount.setText("RON" + s.substring(1));
+            holder.amount.setText("RON" + s);
+
 
             holder.paid.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.green));
             holder.amount.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.green));
