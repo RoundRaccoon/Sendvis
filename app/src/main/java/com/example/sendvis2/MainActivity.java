@@ -2,8 +2,13 @@ package com.example.sendvis2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +34,28 @@ public class MainActivity extends AppCompatActivity {
         navigationHomeView.setBackgroundColor(getResources().getColor(R.color.red));
         navigationGroupsView.setBackgroundColor(getResources().getColor(R.color.orange));
         navigationActivityView.setBackgroundColor(getResources().getColor(R.color.orange));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Notification Channel Name";
+            String description = "Notification Channel Description";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("channel_id", name, importance);
+            channel.setDescription(description);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "channel_id")
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentTitle("NEO STICKS 3+1 GRATIS")
+                .setContentText("Available until 03:22 PM")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
+        // notificationId is a unique int for each notification that you must define
+        int notificationId = 1;
+        notificationManager.notify(notificationId, builder.build());
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener =
